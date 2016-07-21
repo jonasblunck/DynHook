@@ -1,0 +1,8 @@
+﻿  stdafx.cpp
+  Injector.cpp
+  ChainHookAPI.cpp
+  CDisAssm.cpp
+  CChainHook.cpp
+  CAssmCopier.cpp
+  Generating Code...
+  chainhook.vcxproj -> C:\depot\DynHook\chainhook\\bin\chainhookD.lib

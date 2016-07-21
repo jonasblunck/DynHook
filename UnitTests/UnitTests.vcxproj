@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{AF463B3A-5A64-4142-BA56-5C8593F8B75E}</ProjectGuid>
+    <RootNamespace>DPInfiltratorTests</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <UseOfAtl>false</UseOfAtl>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfAtl>false</UseOfAtl>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\bin\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)Intermediate\$(ProjectName)\$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\bin\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)Intermediate\$(ProjectName)\$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectName)</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(VCInstallDir)UnitTest\include;C:\Program Files %28x86%29\Microsoft Visual Studio 12.0\VC\UnitTest\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Microsoft Visual Studio 12.0\VC\UnitTest\lib;$(VCInstallDir)UnitTest\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\dlls\;..\dlls\DPInfiltrator;..\gui;..\gui\atlserver;..\dplib\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderOutputFile>.\Debug/DPInfiltratorTests.pch</PrecompiledHeaderOutputFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <OutputFile>$(SolutionDir)\Bin\UnitTests.dll</OutputFile>
+      <AdditionalLibraryDirectories>"$(VSInstallDir)VC\UnitTest\lib\";..\dlls;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalDependencies>"$(VSInstallDir)VC\UnitTest\lib\Microsoft.VisualStudio.TestTools.CppUnitTestFramework.lib";%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>..\dlls\;..\dlls\DPInfiltrator;..\gui;..\gui\atlserver;..\dplib\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderOutputFile>.\Release/DPInfiltratorTests.pch</PrecompiledHeaderOutputFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+    </ClCompile>
+    <Link>
+      <OutputFile>$(SolutionDir)\Bin\UnitTests.exe</OutputFile>
+      <AdditionalLibraryDirectories>..\dlls;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>false</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>"$(TargetDir)\$(TargetFileName)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\dplib\DebugSymbols.cpp" />
+    <ClCompile Include="..\dplib\GuidHelpers.cpp" />
+    <ClCompile Include="..\dplib\hash.cpp" />
+    <ClCompile Include="..\dplib\ipc.cpp" />
+    <ClCompile Include="..\dplib\IPCHelper.cpp" />
+    <ClCompile Include="..\dplib\ISC.cpp" />
+    <ClCompile Include="..\dplib\ISCPopulator.cpp" />
+    <ClCompile Include="..\dplib\pipeClient.cpp" />
+    <ClCompile Include="..\dplib\pipeServer.cpp" />
+    <ClCompile Include="..\dplib\TypeLibraryTraverse.cpp" />
+    <ClCompile Include="DebugSymbolsTestData.cpp" />
+    <ClCompile Include="DllMain.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="TestCOMHooks.cpp" />
+    <ClCompile Include="TestDebugSymbols.cpp" />
+    <ClCompile Include="TestDynamicHook.cpp" />
+    <ClCompile Include="TestHash.cpp" />
+    <ClCompile Include="TestIPC.cpp" />
+    <ClCompile Include="TestISC.cpp" />
+    <ClCompile Include="TestPipeClientAndServer.cpp" />
+    <ClCompile Include="TestStringParser.cpp" />
+    <ClCompile Include="..\dplib\CallStackParam.cpp" />
+    <ClCompile Include="..\dplib\DynHooker.cpp" />
+    <ClCompile Include="..\dplib\LogicalThreadMgr.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DebugSymbolsTestClass.h" />
+    <ClInclude Include="FakeImpl.h" />
+    <ClInclude Include="IntegrationTests.h" />
+    <ClInclude Include="LocalListener.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="TestAsserts.h" />
+    <ClInclude Include="PipesTestClass.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\chainhook\chainhook.vcxproj">
+      <Project>{33301fac-14c7-49c6-a5e2-54209f9520e2}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="interfaces.idl">
+      <TypeLibraryName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\bin\$(ProjectName).tlb</TypeLibraryName>
+      <TypeLibraryName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\bin\$(ProjectName).tlb</TypeLibraryName>
+    </Midl>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
