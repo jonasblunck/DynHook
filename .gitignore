@@ -1,0 +1,13 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/UnitTests/interfaces_p.c
+/UnitTests/interfaces_i.c
+/UnitTests/interfaces_h.h
+/UnitTests/dlldata.c
+/ipch
+/output
+/.vs
+DynamicHooking.VC.db
+
