@@ -2,6 +2,7 @@
 Example library for how to dynamically/statically hook/intercept unmanaged functions and APIs
 
 Example code for interepting COM call (except taken from unit test):
+
 		hr = LoadTypeLibEx(CComBSTR("UnitTests.tlb"), REGKIND_REGISTER, &spTypeLib);
 		ISC::GetISC().AddTypeLibrary(spTypeLib);
 
@@ -13,6 +14,7 @@ Example code for interepting COM call (except taken from unit test):
 		Assert::AreEqual("ITestInterface->MethodInt(123)", listener.GetTrace());
 
 Example code for intercepting normal __stdcall unmanaged code (again taken from unit test project):
+
 			s_hookManager.InstallDynamicHook(
 				TestDynamicHook::StringFunction, "StringFunction", &s_parameters, &s_listener);
 
