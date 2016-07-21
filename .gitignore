@@ -8,6 +8,6 @@
 /UnitTests/dlldata.c
 /ipch
 /output
-/.vs
+.suo
 DynamicHooking.VC.db
 

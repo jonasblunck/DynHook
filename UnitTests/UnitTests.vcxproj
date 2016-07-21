@@ -89,6 +89,10 @@
       <Command>
       </Command>
     </PreBuildEvent>
+    <Midl>
+      <TypeLibraryName>$(SolutionDir)\output\bin\$(ProjectName).tlb</TypeLibraryName>
+      <OutputDirectory>$(SolutionDir)\output\bin\</OutputDirectory>
+    </Midl>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -116,6 +120,10 @@
     <PostBuildEvent>
       <Command>"$(TargetDir)\$(TargetFileName)"</Command>
     </PostBuildEvent>
+    <Midl>
+      <TypeLibraryName>$(SolutionDir)\output\bin\$(ProjectName).tlb</TypeLibraryName>
+      <OutputDirectory>$(SolutionDir)\output\bin\</OutputDirectory>
+    </Midl>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\dplib\DebugSymbols.cpp" />
@@ -164,8 +172,10 @@
   </ItemGroup>
   <ItemGroup>
     <Midl Include="interfaces.idl">
-      <TypeLibraryName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\bin\$(ProjectName).tlb</TypeLibraryName>
-      <TypeLibraryName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\bin\$(ProjectName).tlb</TypeLibraryName>
+      <TypeLibraryName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectName).tlb</TypeLibraryName>
+      <TypeLibraryName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectName).tlb</TypeLibraryName>
+      <OutputDirectory Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\bin\</OutputDirectory>
+      <OutputDirectory Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\bin\</OutputDirectory>
     </Midl>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
