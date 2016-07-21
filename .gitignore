@@ -11,3 +11,5 @@
 .suo
 DynamicHooking.VC.db
 
+/bin
+/DynamicHooking.VC.VC.opendb
