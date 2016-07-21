@@ -1,7 +1,7 @@
 # DynHook
 Example library for how to dynamically/statically hook/intercept unmanaged functions and APIs
 
-Example code for interepting COM call (except taken from unit test):
+Example code for interepting COM call (excerpt taken from unit test):
 
 		hr = LoadTypeLibEx(CComBSTR("UnitTests.tlb"), REGKIND_REGISTER, &spTypeLib);
 		ISC::GetISC().AddTypeLibrary(spTypeLib);
