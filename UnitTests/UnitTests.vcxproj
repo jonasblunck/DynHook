@@ -82,8 +82,7 @@
       <AdditionalDependencies>"$(VSInstallDir)VC\UnitTest\lib\Microsoft.VisualStudio.TestTools.CppUnitTestFramework.lib";%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>
-      </Command>
+      <Command>COPY /Y $(SolutionDir)\bin\UnitTests.tlb $(SolutionDir)\output\bin</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>
@@ -118,7 +117,7 @@
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
     <PostBuildEvent>
-      <Command>"$(TargetDir)\$(TargetFileName)"</Command>
+      <Command>COPY /Y $(SolutionDir)\bin\UnitTests.tlb $(SolutionDir)\output\bin</Command>
     </PostBuildEvent>
     <Midl>
       <TypeLibraryName>$(SolutionDir)\output\bin\$(ProjectName).tlb</TypeLibraryName>
